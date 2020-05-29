@@ -11,4 +11,4 @@
 
 [KAG github](https://github.com/transhumandesign/kag-base/)
 [KAC github](https://github.com/Vam-Jam/KAC/)
-[Get Started](#king-arthurs-code-documentation)
+[Get Started](#Welcome)
