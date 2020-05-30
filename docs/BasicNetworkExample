@@ -1,0 +1,28 @@
+There are different way to do networking in kag. The following is a barebone code just to help you get started, there's lot of other option
+to network stuff in kag like CRule.Sync().
+void onInit(CRules@ this) // this is necessary for both the player and the server
+{
+    this.addCommandID("sendint");
+}
+
+void onCommand( CRules@ this, u8 cmd, CBitStream @params ) //all command id above should have an implementation in on of those funtion
+{                                                         //these onCommand function are called each time a command is received
+    if(cmd == this.getCommandID("sendint"))//if a sendint command is receive the following is executed
+    {
+        int some_value = params.read_u16();
+        CPlayer@ local_player = getLocalPlayer();
+        if(local_player == null)
+        {
+            return;
+        }
+        this.set_bool(local_player.getNetworkID() + "_showHelp", true);
+        print("Showing Commands. " + some_value);
+}
+
+void onTick() //in this example we send the number 20 on each game tick; this script doesn't really do anything
+{
+  BitStream params;
+  params.write_u16(20);
+  rules.SendCommand(rules.getCommandID("sendint"), params);
+  return false;
+}
