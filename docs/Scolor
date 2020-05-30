@@ -1,5 +1,5 @@
 # SColor
-SColor allow to attribute object to multiple things in angelscript.
+SColor allow to attribute color to multiple things in angelscript.
 The main thing to know is the order of the color, which is 0xAARRGGBB
 where AA is the byte value for transparency
 RR the byte value for how red something is
