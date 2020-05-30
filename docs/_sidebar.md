@@ -1,18 +1,12 @@
 <!-- docs/_sidebar.md -->
 
-* Getting started
-    * [Home](/#Welcome)
-    * [Why not use docs.kag2d.com?](/#why-not-just-use-dockag2dcom)
+- [Home](/ "Home")
 
-* Objects
 
-* Global Functions
+- Getting into KAG modding
 
-* Hooks
+    - [Angelscript](angelscript.md)
+    - [Modding](modding.md)
 
-* Enums
-
-* Variables
-
-* TypeDefs
-
+- Documentation
+    - [Objects](objects/objects.md)
