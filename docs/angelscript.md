@@ -15,7 +15,10 @@ KAG uses this instead of alternative such as lua because binding functions, scri
 ![Geti saying why KAG uses angelscript](https://cdn.discordapp.com/attachments/601801785623052301/716758460662022164/unknown.png)
 
 
-## AngelScript documentation
+## Documentation
 You can find it here: 
 [https://www.angelcode.com/angelscript/sdk/docs/manual/doc_script.html](https://www.angelcode.com/angelscript/sdk/docs/manual/doc_script.html)
 
+
+## KeyWords/Formatting
+(void, classes, enums, new functions etc)
