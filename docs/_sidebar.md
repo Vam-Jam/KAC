@@ -9,4 +9,4 @@
     - [Modding](modding.md)
 
 - Documentation
-    - [Objects](objects/objects.md)
+    - [CBlob](objects/CBlob.md)
