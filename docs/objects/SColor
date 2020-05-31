@@ -1,0 +1,2 @@
+# SColor class
+SColor class is used to give color to pretty much everything. The most important thing to know about it is that the color are set following a ARGB Pattern : 0xAARRGGBB
