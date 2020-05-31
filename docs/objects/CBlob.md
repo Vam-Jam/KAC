@@ -1,4 +1,5 @@
 # CBlob@ class
+Blob class is used for pretty much everything. Its one of the core parts of KAG. Anything from players characters, spawn points like tents, boats and much more are a blob.
 
 ---
 
