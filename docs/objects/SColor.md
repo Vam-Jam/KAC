@@ -1,7 +1,7 @@
 # SColor class
-SColor class is used to give color to the other class that need color. 
+SColor class is used to contain color.
 <br>
-The most important thing to know about it is that the color is set following an ARGB pattern : 0xAARRGGBB
+The most important thing to know about this class is that the color is set following an ARGB pattern : 0xAARRGGBB
 
 + The values range from 0 to 255.
 + `SColor(alpha, red, green, blue);`
