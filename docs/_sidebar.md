@@ -10,3 +10,5 @@
 
 - Documentation
     - [CBlob](objects/CBlob.md)
+    - [CSprite](objects/CSprite.md)
+    - [SColor](objects/SColor.md)

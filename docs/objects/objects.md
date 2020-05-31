@@ -1,6 +1,6 @@
 # All exposed objects
 
-This page contains all currently exposed KAG objects
+currently not used
 
 ---
 
