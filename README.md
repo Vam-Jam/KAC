@@ -1,4 +1,4 @@
-# King Arthurs Code
+# King Arthur's Code
 Main website: https://vam-jam.github.io/KAC/#/
 
 ## Why does this exist
