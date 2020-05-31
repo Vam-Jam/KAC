@@ -12,7 +12,6 @@ It's commonly used after using ``server_CreateBlobNoInit(const string&in)``, so 
 
 #### Example: 
 ```
-<!--- CBlob@ this - onTick --->
 CBlob@ new_blob = server_CreateBlobNoInit("new_blob"); // new blob
 if (new_blob !is null)
 {
@@ -36,7 +35,6 @@ Example: If you have 3 hearts, the returned value is ``1.5f``
 
 #### Example: 
 ```
-<!--- CBlob@ this - onTick --->
 f32 currentHp = this.getHealth(); // store our current HP for later
 ```
 <br>
@@ -55,7 +53,6 @@ Example: If you have 3 hearts, the returned value is ``1.5f``
 
 #### Example: 
 ```
-<!--- CBlob@ this - onTick --->
 f32 hpOnStart = this.getInitialHealth();
 ```
 <br>
