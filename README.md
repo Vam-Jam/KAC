@@ -22,3 +22,4 @@ Before making a Pull Request, please make sure that your changes work locally, y
 - Docsify for making this wonderfully easy to use site
 - Numan for contributing 
 - Guift(Kuift) for contributing
+- Pirate-Rob for contributing
