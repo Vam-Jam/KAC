@@ -6,7 +6,9 @@ Blob class is used for pretty much everything. Its one of the core parts of KAG.
 ## void Init()
 This calls all current scripts attached to the blob ``onInit(CBlob@ this)`` hook.
 <br>
-It's commonly used after using ``server_CreateBlobNoInit(const string&in)``, so attributes can be set before onInit is called
+Called automatically when using ``server_CreateBlob(const string&in, int team, Vec2f Position)``
+<br>
+Can be called manually after using ``server_CreateBlobNoInit(const string&in)``, so attributes can be set before onInit is called
 <br>
 <br>
 <small>Returns: void</small>
