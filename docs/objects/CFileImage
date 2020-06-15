@@ -84,3 +84,10 @@ void setPixelAndAdvance(uint8 a, uint8 r, uint8 g, uint8 b)
 void setPixel(SColor col)
 void setPixelAndAdvance(SColor col)
 void setPixelAtPosition(uint x, uint y, SColor col, bool blend_alpha)
+
+related enums :
+IMAGE_FILENAME_BASE_MAPS it serve to specify ????????
+IMAGE_FILENAME_BASE_CACHE it serve to specify ????????
+
+Variable : 
+CFileImage::bool silent_errors
