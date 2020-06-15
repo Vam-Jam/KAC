@@ -32,5 +32,50 @@ return true if it can be read
 */
 
 /*this method is purely speculation on my part, haven't tested it yet
-nextPixel()
+bool nextPixel()
+probably something similar to objects with iterator pattern :
+Returns true if the CFileImage object has another token in its input.
+usage : CFileImage@ myImage = CFileImage("potatoes.png");
 */
+
+/*this method is purely speculation on my part, haven't tested it yet
+SColor readPixel()
+same thing as readPixel(uint8&out a, uint8&out r, uint8&out g, uint8&out b) but without verification of if the pixel could be read ???
+*/
+/*this method is purely speculation on my part, haven't tested it yet
+readPixel(uint8&out a, uint8&out r, uint8&out g, uint8&out b)
+Read the current pixel color value using predefined u8 variable.
+Put in argument of the function the variable that you want the function to modify.
+usage : 
+    if (myImage.isLoaded())
+		{
+			while(myImage.nextPixel() && !done)
+      {
+          int index = image.getPixelOffset()*4;
+          if(index >= map_size)
+          {
+              done = true;
+              break;
+          }
+          u8 a;
+          u8 r;
+          u8 g;
+          u8 b;
+          save_image.readPixel(a, r, g, b);
+      }
+    }
+*/
+Vec2f getPixelPosition()
+void setPixelPosition(Vec2f pos)
+int getPixelOffset()
+void setPixelOffset(int pos) //this function would be important to document
+int getWidth()
+int getHeight()
+int getSizeInPixels()
+void setFilename(const string&in filename, ImageFileBase base)
+void Save()
+void setPixel(uint8 a, uint8 r, uint8 g, uint8 b)
+void setPixelAndAdvance(uint8 a, uint8 r, uint8 g, uint8 b)
+void setPixel(SColor col)
+void setPixelAndAdvance(SColor col)
+void setPixelAtPosition(uint x, uint y, SColor col, bool blend_alpha)
