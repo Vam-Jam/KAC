@@ -1,0 +1,36 @@
+warning! formatting, wordings and grammar mistake ahead
+<constructor>(const string&in path)
+Load the specified PNG image into a CFileImage object. The string argument represent the path of your image.
+the string argument is the path to the png file to which you want to link your CFileImage object to.
+It create a CFileImage object that point to the file in the specified path.
+usage example : CFileImage@ myImage = CFileImage("Maps/MyModName/"+ map_name + ".png");
+
+
+<constructor>(int width, int height, bool has_alpha)
+Construct and load a CFileImage object with a specified width, height and specify if the resulting image has alpha (? fact check this).
+CFileImage@ myImage = CFileImage(100,75,true); this could be used to create a png file with 100 pixels width and 75 pixel height that has the alpha channel enabled.
+
+/*this method is purely speculation on my part, haven't tested it yet
+bool isLoaded()
+return a bool value to know weither a image has been loaded into a CFileImage object.
+Return true when there's in fact a image loaded into the CFileImage Object
+Return false when there's not a image loaded into the CFileImage Object
+usage : CFileImage@ myimage;
+if(myimage.isLoaded()){[...]}
+*/
+
+/*this method is purely speculation on my part, haven't tested it yet
+void ResetPixel()
+clear the currently selected pixel from his value. (probably put the pixel value to 0)
+*/
+
+/*this method is purely speculation on my part, haven't tested it yet
+void canRead()
+Check whether or not the loaded file can be read.
+return false if it cannot be read
+return true if it can be read
+*/
+
+/*this method is purely speculation on my part, haven't tested it yet
+nextPixel()
+*/
