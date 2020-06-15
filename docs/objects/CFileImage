@@ -39,7 +39,7 @@ usage : CFileImage@ myImage = CFileImage("potatoes.png");
 while(myImage.nextPixel())
 {
 // do stuff
-SColor currentPixel = myImage.readPixel;
+SColor currentPixel = myImage.readPixel();
 }
 */
 
