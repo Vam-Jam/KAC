@@ -36,6 +36,11 @@ bool nextPixel()
 probably something similar to objects with iterator pattern :
 Returns true if the CFileImage object has another token in its input.
 usage : CFileImage@ myImage = CFileImage("potatoes.png");
+while(myImage.nextPixel())
+{
+// do stuff
+SColor currentPixel = myImage.readPixel;
+}
 */
 
 /*this method is purely speculation on my part, haven't tested it yet
