@@ -108,7 +108,8 @@ void setPixel(SColor col)
 void setPixelAndAdvance(SColor col)
 
 void setPixelAtPosition(uint x, uint y, SColor col, bool blend_alpha)
-set pixel at a specific coordinate on the image.
+set pixel at a specific coordinate on the image with the value of the SColor.
+blend_alpha serve to activate or deactivate blending between pixels.
 
 related enums :
 IMAGE_FILENAME_BASE_MAPS it serve to specify ????????
