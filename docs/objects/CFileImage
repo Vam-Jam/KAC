@@ -1,16 +1,18 @@
 warning! formatting, wordings and grammar mistake ahead
 <constructor>(const string&in path)
-Load the specified PNG image into a CFileImage object. The string argument represent the path of your image.
+Make the CFileImage object "point" to a png image. The string argument represent the path of your image.
+All image are created in /Base/Maps/...
 the string argument is the path to the png file to which you want to link your CFileImage object to.
-It create a CFileImage object that point to the file in the specified path.
-usage example : CFileImage@ myImage = CFileImage("Maps/MyModName/"+ map_name + ".png");
+It create a CFileImage object that "point" to the file in the specified path.
+usage example : CFileImage@ myImage = CFileImage("MyModName/"+ map_name + ".png");
 
 
 <constructor>(int width, int height, bool has_alpha)
 Construct and load a CFileImage object with a specified width, height and specify if the resulting image has alpha (? fact check this).
+Usefull when generating image from scratch.
 CFileImage@ myImage = CFileImage(100,75,true); this could be used to create a png file with 100 pixels width and 75 pixel height that has the alpha channel enabled.
 
-/*this method is purely speculation on my part, haven't tested it yet
+/*this method is purely speculation on my part, i used it but it haven't ever gone wrong.
 bool isLoaded()
 return a bool value to know weither a image has been loaded into a CFileImage object.
 Return true when there's in fact a image loaded into the CFileImage Object
@@ -31,37 +33,34 @@ return false if it cannot be read
 return true if it can be read
 */
 
-/*this method is purely speculation on my part, haven't tested it yet
 bool nextPixel()
-probably something similar to objects with iterator pattern :
-Returns true if the CFileImage object has another token in its input.
+similar to objects with iterator pattern :
+Returns true if the CFileImage object has another token in its input and increment the CFileImage offset by 1.
+Offset represent which pixel CFileImage is currently "pointing" to. it goes from left to right, top to bottom.
+
+Example : to reach the pixel at (9,1) of a png with the dimension size of 10x10, the index would be 10+9.
+
 usage : CFileImage@ myImage = CFileImage("potatoes.png");
+myImage.setPixelOffset(-1);
 while(myImage.nextPixel())
 {
 // do stuff
 SColor currentPixel = myImage.readPixel();
 }
-*/
 
-/*this method is purely speculation on my part, haven't tested it yet
+
 SColor readPixel()
-same thing as readPixel(uint8&out a, uint8&out r, uint8&out g, uint8&out b) but without verification of if the pixel could be read ???
-*/
-/*this method is purely speculation on my part, haven't tested it yet
+same thing as readPixel(uint8&out a, uint8&out r, uint8&out g, uint8&out b) but without verification of if the pixel could be read
+
 readPixel(uint8&out a, uint8&out r, uint8&out g, uint8&out b)
 Read the current pixel color value using predefined u8 variable.
 Put in argument of the function the variable that you want the function to modify.
 usage : 
     if (myImage.isLoaded())
-		{
-			while(myImage.nextPixel() && !done)
+    {
+      myImage.setPixelOffset(-1);
+      while(myImage.nextPixel())
       {
-          int index = image.getPixelOffset()*4;
-          if(index >= map_size)
-          {
-              done = true;
-              break;
-          }
           u8 a;
           u8 r;
           u8 g;
@@ -69,21 +68,47 @@ usage :
           save_image.readPixel(a, r, g, b);
       }
     }
-*/
+
 Vec2f getPixelPosition()
+return a Vec2f with the coordinate in  X and Y value of where the CFileImage offset is currently pointing to in the image.
+note that (0,0) is in the upper left, not bottom left. incrementing y mean moving downward.
+
+/*not tested
 void setPixelPosition(Vec2f pos)
+set the offset of the CFileImage object with coordinate instead of directly with an integer.
+*/
+
 int getPixelOffset()
-void setPixelOffset(int pos) //this function would be important to document
+Get the current offset of the CFileImage Object. The offset is used to determine which pixel the CFileImage object is currently "pointing" to. 
+
+void setPixelOffset(int pos)
+Set the offset of the CFileImage object.
+
 int getWidth()
+return the width of the png that the CFileImage object "point" to.
+
 int getHeight()
+return the Height of the png that the CFileImage object "point" to.
+
 int getSizeInPixels()
+
 void setFilename(const string&in filename, ImageFileBase base)
+Use this to get your CFileImage object to "point" to your desired png. Filename can be a path, this will create folder in the Maps folder if the path doesn't exist. 
+image are created by default in King Arthur's Gold/Base/Maps/yourimage.png.
+usage : 
+save_image.setFilename("myMod/myImage.png", ImageFileBase::IMAGE_FILENAME_BASE_MAPS);
+in this example, once Save() is executed on save_image, it will create a png file at King Arthur's Gold/Base/Maps/myMod/myImage.png
+
 void Save()
+Save the current CFileObject image to King Arthur's Gold/Base/Maps/yourimage.png by default.
+
 void setPixel(uint8 a, uint8 r, uint8 g, uint8 b)
 void setPixelAndAdvance(uint8 a, uint8 r, uint8 g, uint8 b)
 void setPixel(SColor col)
 void setPixelAndAdvance(SColor col)
+
 void setPixelAtPosition(uint x, uint y, SColor col, bool blend_alpha)
+set pixel at a specific coordinate on the image.
 
 related enums :
 IMAGE_FILENAME_BASE_MAPS it serve to specify ????????
@@ -91,3 +116,38 @@ IMAGE_FILENAME_BASE_CACHE it serve to specify ????????
 
 Variable : 
 CFileImage::bool silent_errors
+
+Usage example to load a png file into an array:
+void LoadBlueprintFromPng(CRules@ this, CBlob@ localPlayerBlob)
+{
+	@save_image = CFileImage("DynamicBlueprints/1.png");
+	if (save_image.isLoaded())
+	{
+		currentBlueprintWidth = save_image.getWidth();
+		currentBlueprintHeight = save_image.getHeight();
+		
+		save_image.setPixelOffset(-1); // set to -1 so that when nextPixel() is called for the first time, it's set to 0
+		
+		uint8[][] _currentBlueprintData(currentBlueprintWidth, uint8[](currentBlueprintHeight, 0));
+		currentBlueprintData = _currentBlueprintData;
+		u8 a;
+		u8 r;
+		u8 g;
+		u8 b;
+		while(save_image.nextPixel() && !done)
+		{
+			if(save_image.readPixel(a, r, g, b)) //the argument given are the output of the function
+			{
+				currentBlueprintData[save_image.getPixelPosition().x][save_image.getPixelPosition().y] = r;
+			}
+			else
+			{
+				print("an error occured while attempting to read a pixel from apng");
+			}
+		}
+	}
+	else
+	{
+		print("couldn't load image");
+	}
+}
