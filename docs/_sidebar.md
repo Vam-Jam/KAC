@@ -20,3 +20,4 @@
     - [CBitStream](objects/CBitStream.md)
     - [ConfigFile](objects/ConfigFile.md)
     - [HitInfo](objects/HitInfo.md)
+    - [ShapePlatformDirection](objects/ShapePlatformDirection.md)
