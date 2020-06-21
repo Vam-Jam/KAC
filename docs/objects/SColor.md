@@ -16,7 +16,7 @@ All values in SColor are by default 0 when nothing is specified.
 ## void set(uint)
 ## \<constructor>(uint)
 Sets a hex value.
-SColor accepts hex values. For example, the color `(255, 211, 249, 193)` 
+SColor accepts hex values. For example, the color `(255, 211, 249, 193)`
 can be expressed as `(0xFFD3F9C1)`
 This can be assigned to an SColor variable via its constructor like this `SColor(0xFFD3F9C1)`
 This can be assigned to an SColor variable after initialization like this `color.set(0xFFD3F9C1);`
@@ -129,12 +129,12 @@ Sets the amount of blue.
 
 
 ## Usage Example
-```cs
+```as
 void onRender( CRules@ this )
 {
 	SColor background_color = SColor(127, 255, 0, 0);//Red
 	GUI::DrawRectangle(Vec2f(0, 0), Vec2f(500, 500), background_color);
-	
+
   background_color.setBlue(255);//Makes the blue value 255, turning the color purple.
   GUI::DrawRectangle(Vec2f(500, 500), Vec2f(1000, 1000), background_color);
 }

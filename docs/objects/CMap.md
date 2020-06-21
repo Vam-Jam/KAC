@@ -6,7 +6,7 @@ Contains useful functions and data about the map in which the blobs interact wit
 ## CMap@ getMap()
 Returns the map. Can be used anywhere
 #### Example:
-```
+```as
 CMap@ map = getMap();
 printFloat(map.tilesize);
 ```
@@ -19,7 +19,7 @@ The raycast is stopped if a tile inside the ray is solid or if the blob associat
 <small>Returns: true if the rayCast is stopped before `endPosWorldspace`</small>
 
 #### Example:
-```
+```as
 CMap@ map = getMap();
 
 Vec2f pos = this.getPosition();
@@ -68,7 +68,7 @@ For each blob in the arc it will check `raycastSolidNoBlobs` to check if they ca
 <small>Returns: true if list.length > 0</small>
 
 ## Example
-```
+```as
 CMap@ map = getMap();
 
 Vec2f pos = this.getPosition();

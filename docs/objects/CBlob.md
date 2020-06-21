@@ -13,8 +13,8 @@ Can be called manually after using ``server_CreateBlobNoInit(const string&in)``,
 <br>
 <small>Returns: void</small>
 
-#### Example: 
-```
+#### Example:
+```as
 CBlob@ new_blob = server_CreateBlobNoInit("new_blob"); // new blob
 if (new_blob !is null)
 {
@@ -36,8 +36,8 @@ Health returned is current hp / 2.
 <br>
 Example: If you have 3 hearts, the returned value is ``1.5f``
 
-#### Example: 
-```
+#### Example:
+```as
 f32 currentHp = this.getHealth(); // store our current HP for later
 ```
 <br>
@@ -54,8 +54,8 @@ Health returned is current hp / 2.
 <br>
 Example: If you have 3 hearts, the returned value is ``1.5f``
 
-#### Example: 
-```
+#### Example:
+```as
 f32 hpOnStart = this.getInitialHealth();
 ```
 <br>
