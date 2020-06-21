@@ -25,11 +25,15 @@
       subMaxLevel: 2,
       name: 'King Arthur\'s Code',
       repo: 'https://github.com/Vam-Jam/KAC'
+      plugins: [
+          EditOnGithubPlugin.create('https://github.com/Vam-Jam/KAC/tree/master/docs')
+      ]
     }
   </script>
 
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
+  <script src="//unpkg.com/docsify-edit-on-github/index.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/index.min.js"
       type="text/javascript">
   </script>
