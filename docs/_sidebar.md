@@ -19,3 +19,4 @@
     - [CPlayer](objects/CPlayer.md)
     - [CBitStream](objects/CBitStream.md)
     - [ConfigFile](objects/ConfigFile.md)
+    - [HitInfo](objects/HitInfo.md)
