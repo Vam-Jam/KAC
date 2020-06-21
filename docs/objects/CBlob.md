@@ -37,7 +37,7 @@ Health returned is current hp / 2.
 Example: If you have 3 hearts, the returned value is ``1.5f``
 
 #### Example:
-```
+```as
 f32 currentHp = this.getHealth(); // store our current HP for later
 ```
 <br>
@@ -55,7 +55,7 @@ Health returned is current hp / 2.
 Example: If you have 3 hearts, the returned value is ``1.5f``
 
 #### Example:
-```
+```as
 f32 hpOnStart = this.getInitialHealth();
 ```
 <br>

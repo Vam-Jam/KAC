@@ -18,7 +18,7 @@ The tile offset of tile hit.
 If using getHitInfosFromRay this should be the actual tile hit instead of air.
 
 ### Example
-```
+```as
 ...
 HitInfo@ hi = hitInfos[i];
 
