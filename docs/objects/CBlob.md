@@ -33,18 +33,14 @@ if (new_blob !is null)
 This returns an f32 in the amount of HP the blob currently has.
 <br>
 <br>
-<small>Returns: f32 - current health</small>
-
-#### Note:
-Health returned is current hp / 2.
-<br>
-Example: If you have 3 hearts, the returned value is ``1.5f``
+<small>Returns: f32 - current health (amount of hearts / 2)</small>
 
 <details>
-<summary>Code example</summary>
+<summary>Example</summary>
 
 ```as
-f32 currentHp = this.getHealth(); // store our current HP for later
+f32 currentHp = this.getHealth(); // lets say we have 2 hearts
+print(currentHp+''); // this would print '1.0'
 ```
 
 </details>
@@ -55,18 +51,14 @@ f32 currentHp = this.getHealth(); // store our current HP for later
 This returns an f32 with the amount of HP stated in our blobs .cfg file.
 <br>
 <br>
-<small>Returns: f32 - with starting hp</small>
-
-#### Note:
-Health returned is current hp / 2.
-<br>
-Example: If you have 3 hearts, the returned value is ``1.5f``
+<small>Returns: f32 - with starting hp (hearts / 2)</small>
 
 <details>
-<summary>Code example</summary>
+<summary>Example</summary>
 
 ```as
-f32 hpOnStart = this.getInitialHealth();
+f32 hpOnStart = this.getInitialHealth(); // lets say we started off with 3 hearts
+print(hpOnStart+''); // this would print '1.5'
 ```
 
 </details>

@@ -12,7 +12,10 @@ Returns the shape. Can be used on any blob. Can return null.
 
 ```as
 CShape@ shape = blob.getShape();
-shape.SetStatic(true);
+if (shape !is null) // make sure we dont run into a null error
+{
+    shape.SetStatic(true); // change what we want
+}
 ```
 
 </details>
