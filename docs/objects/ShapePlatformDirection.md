@@ -6,7 +6,9 @@ You can add a platform to a blob by setting `shape_platform = yes` in the config
 
 Collision with a platform happens if the normal of the collision with the platform direction creates and angle less than the limit, and if the overlap with the object is less than 20% of the objects area.
 
-### Example of how to check platform direction for a call to CMap::HitInfosFromRay
+<details>
+<summary>Example of how to check platform direction for a call to CMap::HitInfosFromRay</summary>
+
 ```as
 ...
 CBlob@ b = hits[i].blob;
@@ -29,6 +31,9 @@ if (blob !is null && blob.isPlatform())
 ```
 
 The above code is almost exactly what the engine does internally for collisions except with the collision normal.
+
+</details>
+
 
 ## Vec2f directions
 The direction of the platform. This should be a normalized vector. Vec2f(0, -1) is up.

@@ -37,10 +37,15 @@ Sets the alpha, red, blue, and green of the SColor variable.
 2. Red - How much red the color has.
 3. Blue - How much blue the color has.
 4. Green - How much green the color has.
-### Examples
+
+<details>
+<summary>Example</summary>
+
 `color.set(255, 255, 0 ,0)` Used to assign a red color to an existing SColor variable.
+
 `SColor(255, 255, 0, 0);` for a red color on creation of a SColor variable.
 
+</details>
 <br>
 
 ## \<constructor>(SColor)

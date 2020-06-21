@@ -5,11 +5,15 @@ Contains useful functions and data about the map in which the blobs interact wit
 
 ## CMap@ getMap()
 Returns the map. Can be used anywhere
-#### Example:
+<details>
+<summary>Example</summary>
+
 ```as
 CMap@ map = getMap();
 printFloat(map.tilesize);
 ```
+
+</details>
 
 ## bool rayCastSolid(Vec2f startPosWorldspace, Vec2f endPosWorldspace, Vec2f&out pointPosWorldspace)
 Casts a ray from `startPosWorldspace` to `endPosWorldspace`. `pointPosWorldspace` is set to the postion the ray is stopped or the `endPosWorldspace` if the ray is not stopped.
@@ -18,7 +22,9 @@ The raycast is stopped if a tile inside the ray is solid or if the blob associat
 
 <small>Returns: true if the rayCast is stopped before `endPosWorldspace`</small>
 
-#### Example:
+<details>
+<summary>Example</summary>
+
 ```as
 CMap@ map = getMap();
 
@@ -36,6 +42,8 @@ else
     print("ray cast stopped at: " + result);
 }
 ```
+
+</details>
 
 ## bool rayCastSolid(Vec2f startPosWorldspace, Vec2f endPosWorldspace)
 The same as rayCastSolid.
@@ -67,7 +75,9 @@ For each blob in the arc it will check `raycastSolidNoBlobs` to check if they ca
 
 <small>Returns: true if list.length > 0</small>
 
-## Example
+<details>
+<summary>Example</summary>
+
 ```as
 CMap@ map = getMap();
 
@@ -87,6 +97,8 @@ if( map.getHitInfosFromArch(pos, -45, 45, 36.0f, this, true, hits))
     }
 }
 ```
+
+</details>
 
 ## bool getHitInfosFromArc(Vec2f originPosWorldspace, float angleDegrees, float arcDegrees, float distance, CBlob@ hitter, HitInfo@[]@ list)
 Calls getHitInfosFromArc with raycast_blobs set to true.

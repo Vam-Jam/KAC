@@ -17,7 +17,9 @@ If using getHitInfosFromRay this will always be 0.
 The tile offset of tile hit.
 If using getHitInfosFromRay this should be the actual tile hit instead of air.
 
-### Example
+<details>
+<summary>Example</summary>
+
 ```as
 ...
 HitInfo@ hi = hitInfos[i];
@@ -29,6 +31,8 @@ if (map.isTileWood(t.type))
     print("arc hit wood tile");
 }
 ```
+
+</details>
 
 ## Vec2f hitpos
 For blobs this will be the blobs position. For tiles this will be where the ray intersects the tile.
