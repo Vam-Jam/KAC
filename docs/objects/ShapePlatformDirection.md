@@ -7,7 +7,7 @@ You can add a platform to a blob by setting `shape_platform = yes` in the config
 Collision with a platform happens if the normal of the collision with the platform direction creates and angle less than the limit, and if the overlap with the object is less than 20% of the objects area.
 
 ### Example of how to check platform direction for a call to CMap::HitInfosFromRay
-```cpp
+```as
 ...
 CBlob@ b = hits[i].blob;
 if (blob !is null && blob.isPlatform())
