@@ -1,10 +1,10 @@
 # CFileImage Class
-This class serve to read and write png files
+This class serves to read and write png files
 
 ## \<constructor>(const string&in path)
 Make the CFileImage object "point" to a png image. The string argument represent the path of your image.
 
-All image are created in /Base/Maps/...
+All image are created in `/Base/Maps/...`
 
 The string argument is the path to the png file to which you want to link your CFileImage object to.
 It create a CFileImage object that "point" to the file in the specified path. Note that CFileImage uses the CFileMatcher class on the string argument to find the path.
@@ -137,7 +137,7 @@ Return the Height of the png that the CFileImage object "point" to.
 ## void setFilename(const string&in filename, ImageFileBase base)
 Use this to get your CFileImage object to "point" to your desired png. Filename can be a path, this will create folder in the Maps folder if the path doesn't exist. 
 
-Image are created by default in King Arthur's Gold/Base/Maps/yourimage.png.
+Image are created by default in ``King Arthur's Gold/Base/Maps/yourimage.png.``
 <details>
 <summary>Example</summary>
 	
@@ -148,12 +148,12 @@ save_image.Save();
 ```
 In this example, once Save() is executed on save_image, it will create a png file at 
 
-King Arthur's Gold/Base/Maps/myMod/myImage.png
+``King Arthur's Gold/Base/Maps/myMod/myImage.png``
 </details>
 
 
 ## void Save()
-Save the current CFileObject image to King Arthur's Gold/Base/Maps/yourimage.png by default or if setFilename has been set, it save it to that location.
+Save the current CFileObject image to ``King Arthur's Gold/Base/Maps/yourimage.png`` by default or if setFilename has been set, it save it to that location.
 
 ## void setPixel(uint8 a, uint8 r, uint8 g, uint8 b)
 ## void setPixelAndAdvance(uint8 a, uint8 r, uint8 g, uint8 b)
@@ -168,12 +168,15 @@ blend_alpha serve to activate or deactivate blending between pixels.
 * IMAGE_FILENAME_BASE_MAPS it serve to specify _________
 * IMAGE_FILENAME_BASE_CACHE it serve to specify _________
 
-## Variable : 
+## Variable 
 CFileImage::bool silent_errors
 
 This variable purpose is to _________
 
-## Usage example to load a png file into an array:
+## Examples
+<details>
+<summary>Usage example to load a png file into an array</summary>
+
 ```as
 uint8[][] currentBlueprintData;
 int16 currentBlueprintWidth = 0;
@@ -214,7 +217,11 @@ void LoadBlueprintFromPng(CRules@ this, string imagePath)
 	}
 }
 ```
-## Usage example to find all of the images of your mod:
+</details>
+
+<details>
+<summary>Usage example to find all of the images of your mod</summary>
+
 To be able to retrieve all image from your mod, you should prefix or suffix all your image with a identifiers. In this example, every image file wanted has a prefix with "blueprint_".
 ```as
 //this is what is executed when saving a file in this example
@@ -240,6 +247,7 @@ void searchForBlueprints()
 	}
 }
 ```
+
 ```as
 bool loadImage = false; 
 void onInit(CRules@ this)
@@ -261,3 +269,5 @@ void onTick(CRules@ this)
 	}
 }
 ```
+
+</details>
