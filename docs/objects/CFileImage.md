@@ -11,7 +11,8 @@ the string argument is the path to the png file to which you want to link your C
 It create a CFileImage object that "point" to the file in the specified path. Note that CFileImage uses the CFileMatcher class on the string argument to find the path.
 <details>
 <summary>Example</summary>
-```
+	
+```as
 CFileImage@ myImage = CFileImage("MyModName/"+ map_name + ".png");
 ```
 </details>
@@ -23,7 +24,8 @@ Construct and load a CFileImage object with a specified width, height and specif
 Usefull when generating image from scratch.
 <details>
 <summary>Example</summary>
-```
+	
+```as
 CFileImage@ myImage = CFileImage(100,75,true);
 ``` 
 
@@ -38,9 +40,9 @@ Return false when there's not a image loaded into the CFileImage Object. Usually
 <details>
 <summary>Example</summary>
 
-```
+```as
 CFileImage@ myimage;
-if(myimage.isLoaded()){[...]
+if(myimage.isLoaded()){[...]}
 ```
 
 </details>
@@ -64,7 +66,8 @@ Offset represent which pixel CFileImage is currently "pointing" to. it goes from
 For example, to reach the pixel at (9,1) of a png with the dimension size of 10x10, the index would be 10+9 = 19.
 <details>
 <summary>Example</summary>
-```
+	
+```as
 CFileImage@ myImage = CFileImage("potatoes.png");
 myImage.setPixelOffset(-1);
 while(myImage.nextPixel())
@@ -73,6 +76,7 @@ while(myImage.nextPixel())
 SColor currentPixel = myImage.readPixel();
 }
 ```
+
 </details>
 
 
@@ -87,7 +91,8 @@ Read the current pixel color value using predefined u8 variable. The variable gi
 
 <details>
 <summary>Example</summary>
-```
+	
+```as
     if (myImage.isLoaded())
     {
       myImage.setPixelOffset(-1);
@@ -135,7 +140,8 @@ Use this to get your CFileImage object to "point" to your desired png. Filename 
 image are created by default in King Arthur's Gold/Base/Maps/yourimage.png.
 <details>
 <summary>Example</summary>
-```
+	
+```as
 save_image.setFilename("myMod/myImage.png", ImageFileBase::IMAGE_FILENAME_BASE_MAPS);
 //do image operation...
 save_image.Save();
@@ -168,7 +174,7 @@ CFileImage::bool silent_errors
 This variable purpose is to _________
 
 ## Usage example to load a png file into an array:
-```
+```as
 uint8[][] currentBlueprintData;
 int16 currentBlueprintWidth = 0;
 int16 currentBlueprintHeight = 0;
@@ -210,7 +216,7 @@ void LoadBlueprintFromPng(CRules@ this, string imagePath)
 ```
 ## Usage example to find all of the images of your mod:
 To be able to retrieve all image from your mod, you should prefix or suffix all your image with a identifiers. In this example, every image file wanted has a prefix with "blueprint_".
-```
+```as
 //this is what is executed when saving a file in this example
 int currentTime = Time();
 save_image.setFilename("DynamicBlueprints/blueprint_" + currentTime + ".png", ImageFileBase::IMAGE_FILENAME_BASE_MAPS);
@@ -219,7 +225,7 @@ save_image.setPixelOffset(0);
 save_image.Save()
 ```
 The following is a concrete example on how retrieving and loading previously saved image may be implemented : 
-```
+```as
 array<string> filenames;
 /* search for all png files path that start with "blueprint_" and
 put the path into a string array named filenames */
@@ -234,7 +240,7 @@ void searchForBlueprints()
 	}
 }
 ```
-```
+```as
 bool loadImage = false; 
 void onInit(CRules@ this)
 {
@@ -242,7 +248,7 @@ void onInit(CRules@ this)
     loadImage = true;
 }
 ```
-```
+```as
 void onTick(CRules@ this)
 {
 
