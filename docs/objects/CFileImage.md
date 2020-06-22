@@ -6,7 +6,7 @@ Make the CFileImage object "point" to a png image. The string argument represent
 
 All image are created in /Base/Maps/...
 
-the string argument is the path to the png file to which you want to link your CFileImage object to.
+The string argument is the path to the png file to which you want to link your CFileImage object to.
 It create a CFileImage object that "point" to the file in the specified path. Note that CFileImage uses the CFileMatcher class on the string argument to find the path.
 <details>
 <summary>Example</summary>
@@ -28,12 +28,12 @@ Usefull when generating image from scratch.
 CFileImage@ myImage = CFileImage(100,75,true);
 ``` 
 
-this could be used to create a png file with 100 pixels width and 75 pixel height that has the alpha channel enabled.
+This could be used to create a png file with 100 pixels width and 75 pixel height that has the alpha channel enabled.
 </details>
 
 
 ## bool isLoaded()
-return a bool value to know weither a image has been loaded into a CFileImage object.
+Return a bool value to know weither a image has been loaded into a CFileImage object.
 Return true when there's in fact a image loaded into the CFileImage Object
 Return false when there's not a image loaded into the CFileImage Object. Usually happen when the CFileImage object cannot find the png file. 
 <details>
@@ -48,18 +48,18 @@ if(myimage.isLoaded()){[...]}
 
 
 ## void ResetPixel()
-clear the currently selected pixel from his value. (probably put the pixel value to 0)
+Clear the currently selected pixel from his value. (probably put the pixel value to 0)
 <br>(this is a speculation)<br>
 
 
 ## void canRead()
 <br>Check whether or not the loaded file can be read.</br>
-<br>return false if it cannot be read</br>
-<br>return true if it can be read</br>
+<br>Return false if it cannot be read</br>
+<br>Return true if it can be read</br>
 <br>(this is a speculation)</br>
 
 ## bool nextPixel()
-similar to objects with iterator pattern :
+Similar to objects with iterator pattern :
 Returns true if the CFileImage object has another token in its input and increment the CFileImage offset by 1.
 Offset represent which pixel CFileImage is currently "pointing" to. it goes from left to right, top to bottom.
 For example, to reach the pixel at (9,1) of a png with the dimension size of 10x10, the index would be 10+9 = 19.
@@ -111,12 +111,12 @@ Read the current pixel color value using predefined u8 variable. The variable gi
 
 
 ## Vec2f getPixelPosition()
-return a Vec2f with the coordinate in  X and Y value of where the CFileImage offset is currently pointing to in the image.
+Return a Vec2f with the coordinate in  X and Y value of where the CFileImage offset is currently pointing to in the image.
 note that (0,0) is in the upper left, not bottom left. incrementing y mean moving downward.
 
 
 ## void setPixelPosition(Vec2f pos)
-set the offset of the CFileImage object with coordinate instead of directly with an integer.
+Set the offset of the CFileImage object with coordinate instead of directly with an integer.
 
 (this is a speculation)
 
@@ -127,17 +127,17 @@ Get the current offset of the CFileImage Object. The offset is used to determine
 Set the offset of the CFileImage object.
 
 ## int getWidth()
-return the width of the png that the CFileImage object "point" to.
+Return the width of the png that the CFileImage object "point" to.
 
 ## int getHeight()
-return the Height of the png that the CFileImage object "point" to.
+Return the Height of the png that the CFileImage object "point" to.
 
 ## int getSizeInPixels()
 
 ## void setFilename(const string&in filename, ImageFileBase base)
 Use this to get your CFileImage object to "point" to your desired png. Filename can be a path, this will create folder in the Maps folder if the path doesn't exist. 
 
-image are created by default in King Arthur's Gold/Base/Maps/yourimage.png.
+Image are created by default in King Arthur's Gold/Base/Maps/yourimage.png.
 <details>
 <summary>Example</summary>
 	
@@ -146,7 +146,7 @@ save_image.setFilename("myMod/myImage.png", ImageFileBase::IMAGE_FILENAME_BASE_M
 //do image operation...
 save_image.Save();
 ```
-in this example, once Save() is executed on save_image, it will create a png file at 
+In this example, once Save() is executed on save_image, it will create a png file at 
 
 King Arthur's Gold/Base/Maps/myMod/myImage.png
 </details>
@@ -161,7 +161,7 @@ Save the current CFileObject image to King Arthur's Gold/Base/Maps/yourimage.png
 ## void setPixelAndAdvance(SColor col)
 
 ## void setPixelAtPosition(uint x, uint y, SColor col, bool blend_alpha)
-set pixel at a specific coordinate on the image with the value of the SColor.
+Set pixel at a specific coordinate on the image with the value of the SColor.
 blend_alpha serve to activate or deactivate blending between pixels.
 
 ## enums
