@@ -1,4 +1,3 @@
-warning! formatting, wordings and grammar mistake ahead
 # CFileImage Class
 This class serve to read and write png files
 
@@ -84,7 +83,8 @@ SColor currentPixel = myImage.readPixel();
 
 
 ## SColor readPixel()
-Similar to readPixel(uint8&out a, uint8&out r, uint8&out g, uint8&out b) but return the color as a SColor instead of in the given argument. This method doesn't verify if the operation was successful since it doesn't return a bool (assuming the bool value on the other method return the value of canRead())
+Similar to ```
+readPixel(uint8&out a, uint8&out r, uint8&out g, uint8&out b)``` but return the color as a SColor instead of in the given argument. This method doesn't verify if the operation was successful since it doesn't return a bool (assuming the bool value on the other method return the value of canRead())
 
 ## bool readPixel(uint8&out a, uint8&out r, uint8&out g, uint8&out b)
 Read the current pixel color value using predefined u8 variable. The variable given to the function's arguments are then modified with the corresponding 
