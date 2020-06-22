@@ -11,7 +11,9 @@ the string argument is the path to the png file to which you want to link your C
 It create a CFileImage object that "point" to the file in the specified path. Note that CFileImage uses the CFileMatcher class on the string argument to find the path.
 <details>
 <summary>Example</summary>
-`CFileImage@ myImage = CFileImage("MyModName/"+ map_name + ".png");`
+```
+CFileImage@ myImage = CFileImage("MyModName/"+ map_name + ".png");
+```
 </details>
 
 
@@ -21,7 +23,9 @@ Construct and load a CFileImage object with a specified width, height and specif
 Usefull when generating image from scratch.
 <details>
 <summary>Example</summary>
-`CFileImage@ myImage = CFileImage(100,75,true);` 
+```
+CFileImage@ myImage = CFileImage(100,75,true);
+``` 
 
 this could be used to create a png file with 100 pixels width and 75 pixel height that has the alpha channel enabled.
 </details>
@@ -61,7 +65,7 @@ For example, to reach the pixel at (9,1) of a png with the dimension size of 10x
 <details>
 <summary>Example</summary>
 ```
-usage : CFileImage@ myImage = CFileImage("potatoes.png");
+CFileImage@ myImage = CFileImage("potatoes.png");
 myImage.setPixelOffset(-1);
 while(myImage.nextPixel())
 {
