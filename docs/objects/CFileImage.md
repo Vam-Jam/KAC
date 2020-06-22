@@ -33,9 +33,9 @@ This could be used to create a png file with 100 pixels width and 75 pixel heigh
 
 
 ## bool isLoaded()
-Return a bool value to know weither a image has been loaded into a CFileImage object.
-Return true when there's in fact a image loaded into the CFileImage Object
-Return false when there's not a image loaded into the CFileImage Object. Usually happen when the CFileImage object cannot find the png file. 
+Return a bool value to know whether a image has been loaded into a CFileImage object.<br>
+Return true when there's in fact a image loaded into the CFileImage object.<br>
+Return false when there's not a image loaded into the CFileImage object. Usually happen when the CFileImage object cannot find the png file.
 <details>
 <summary>Example</summary>
 
@@ -53,13 +53,13 @@ Clear the currently selected pixel from his value. (probably put the pixel value
 
 
 ## void canRead()
-<br>Check whether or not the loaded file can be read.</br>
-<br>Return false if it cannot be read</br>
-<br>Return true if it can be read</br>
-<br>(this is a speculation)</br>
+Check whether or not the loaded file can be read.<br>
+Return false if it cannot be read<br>
+Return true if it can be read<br>
+(this is a speculation)
 
 ## bool nextPixel()
-Similar to objects with iterator pattern :
+Similar to objects with iterator pattern :<br>
 Returns true if the CFileImage object has another token in its input and increment the CFileImage offset by 1.
 Offset represent which pixel CFileImage is currently "pointing" to. it goes from left to right, top to bottom.
 For example, to reach the pixel at (9,1) of a png with the dimension size of 10x10, the index would be 10+9 = 19.
