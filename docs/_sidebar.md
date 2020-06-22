@@ -11,6 +11,7 @@
     - [CRules](objects/CRules.md)
     - [CMap](objects/CMap.md)
     - [CShape](objects/CShape.md)
+    - [CFileImage](objects/CFileImage.md)
     - [Vec2f](objects/Vec2f.md)
     - [CPlayer](objects/CPlayer.md)
     - [CBitStream](objects/CBitStream.md)
