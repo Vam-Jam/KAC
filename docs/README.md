@@ -11,9 +11,9 @@ Feel free to contribute, raise up any issues or suggest ideas on our github.
 
 ## Why not just use doc.kag2d.com?
 
-The main reason why this was made is so the community can contribute to it. doc.kag2d.com is built when there is an engine update, meaning only THD members with access to engine access to KAG can do it.
+The main reason why this was made is so the community can contribute easily. KAG's official documentation only gets updated when there is a new test build, which isnt too bad, except the only people who can contribute to it is THD staff/interns.
 
-Along with that, it only updates per KAG update. This means that if we wanted to fix a spelling mistake, or a minor issue, it would require us to wait for an update.
+Along with that, I wanted something that anybody can contribute to. If this site stops getting updates, somebody else can just fork and re-host.
 
 ### TODO
 + Object page

@@ -1,180 +1,273 @@
-# CFileImage@ class
+# CFileImage Class
+This class serves to read and write png files
 
----
+## \<constructor>(const string&in path)
+Make the CFileImage object "point" to a png image. The string argument represent the path of your image.
 
-## <constructor>(const string&in)
+All image are created in `/Base/Maps/...`
 
-<br>
-<small>Returns: $<constructor>(const </small>
+The string argument is the path to the png file to which you want to link your CFileImage object to.
+It create a CFileImage object that "point" to the file in the specified path. Note that CFileImage uses the CFileMatcher class on the string argument to find the path.
+<details>
+<summary>Example</summary>
+	
+```as
+CFileImage@ myImage = CFileImage("MyModName/"+ map_name + ".png");
+```
+</details>
 
-<br>
-<br>
 
-## <constructor>(int, int, bool)
+## \<constructor>(int width, int height, bool has_alpha)
+Construct and load a CFileImage object with a specified width, height and specify if the resulting image has alpha (? fact check this).
 
-<br>
-<small>Returns: $<constructor>(int, </small>
+Usefull when generating image from scratch.
+<details>
+<summary>Example</summary>
+	
+```as
+CFileImage@ myImage = CFileImage(100,75,true);
+``` 
 
-<br>
-<br>
+This could be used to create a png file with 100 pixels width and 75 pixel height that has the alpha channel enabled.
+</details>
+
 
 ## bool isLoaded()
+Return a bool value to know whether a image has been loaded into a CFileImage object.<br>
+Return true when there's in fact a image loaded into the CFileImage object.<br>
+Return false when there's not a image loaded into the CFileImage object. Usually happen when the CFileImage object cannot find the png file.
+<details>
+<summary>Example</summary>
 
-<br>
-<small>Returns: $bool </small>
+```as
+CFileImage@ myimage;
+if(myimage.isLoaded()){[...]}
+```
 
-<br>
-<br>
+</details>
+
 
 ## void ResetPixel()
+Clear the currently selected pixel from his value. (probably put the pixel value to 0)
+<br>(this is a speculation)<br>
 
-<br>
-<small>Returns: $void </small>
 
-<br>
-<br>
-
-## bool canRead()
-
-<br>
-<small>Returns: $bool </small>
-
-<br>
-<br>
+## void canRead()
+Check whether or not the loaded file can be read.<br>
+Return false if it cannot be read<br>
+Return true if it can be read<br>
+(this is a speculation)
 
 ## bool nextPixel()
+Similar to objects with iterator pattern :<br>
+Returns true if the CFileImage object has another token in its input and increment the CFileImage offset by 1.
+Offset represent which pixel CFileImage is currently "pointing" to. it goes from left to right, top to bottom.
+For example, to reach the pixel at (9,1) of a png with the dimension size of 10x10, the index would be 10+9 = 19.
+<details>
+<summary>Example</summary>
+	
+```as
+CFileImage@ myImage = CFileImage("potatoes.png");
+myImage.setPixelOffset(-1);
+while(myImage.nextPixel())
+{
+// do stuff
+SColor currentPixel = myImage.readPixel();
+}
+```
 
-<br>
-<small>Returns: $bool </small>
+</details>
 
-<br>
-<br>
+
+
+
 
 ## SColor readPixel()
-
-<br>
-<small>Returns: $SColor </small>
-
-<br>
-<br>
+Similar to ```
+readPixel(uint8&out a, uint8&out r, uint8&out g, uint8&out b)``` but return the color as a SColor instead of in the given argument. This method doesn't verify if the operation was successful since it doesn't return a bool (assuming the bool value on the other method return the value of canRead())
 
 ## bool readPixel(uint8&out a, uint8&out r, uint8&out g, uint8&out b)
+Read the current pixel color value using predefined u8 variable. The variable given to the function's arguments are then modified with the corresponding 
 
-<br>
-<small>Returns: $bool </small>
+<details>
+<summary>Example</summary>
+	
+```as
+    if (myImage.isLoaded())
+    {
+      myImage.setPixelOffset(-1);
+      while(myImage.nextPixel())
+      {
+          u8 a;
+          u8 r;
+          u8 g;
+          u8 b;
+          save_image.readPixel(a, r, g, b);
+      }
+    }
+```
+</details>
 
-<br>
-<br>
+
 
 ## Vec2f getPixelPosition()
+Return a Vec2f with the coordinate in  X and Y value of where the CFileImage offset is currently pointing to in the image.
+note that (0,0) is in the upper left, not bottom left. incrementing y mean moving downward.
 
-<br>
-<small>Returns: $Vec2f </small>
-
-<br>
-<br>
 
 ## void setPixelPosition(Vec2f pos)
+Set the offset of the CFileImage object with coordinate instead of directly with an integer.
 
-<br>
-<small>Returns: $void </small>
-
-<br>
-<br>
+(this is a speculation)
 
 ## int getPixelOffset()
-
-<br>
-<small>Returns: $int </small>
-
-<br>
-<br>
+Get the current offset of the CFileImage Object. The offset is used to determine which pixel the CFileImage object is currently "pointing" to. 
 
 ## void setPixelOffset(int pos)
-
-<br>
-<small>Returns: $void </small>
-
-<br>
-<br>
+Set the offset of the CFileImage object.
 
 ## int getWidth()
-
-<br>
-<small>Returns: $int </small>
-
-<br>
-<br>
+Return the width of the png that the CFileImage object "point" to.
 
 ## int getHeight()
-
-<br>
-<small>Returns: $int </small>
-
-<br>
-<br>
+Return the Height of the png that the CFileImage object "point" to.
 
 ## int getSizeInPixels()
 
-<br>
-<small>Returns: $int </small>
-
-<br>
-<br>
-
 ## void setFilename(const string&in filename, ImageFileBase base)
+Use this to get your CFileImage object to "point" to your desired png. Filename can be a path, this will create folder in the Maps folder if the path doesn't exist. 
 
-<br>
-<small>Returns: $void </small>
+Image are created by default in ``King Arthur's Gold/Base/Maps/yourimage.png.``
+<details>
+<summary>Example</summary>
+	
+```as
+save_image.setFilename("myMod/myImage.png", ImageFileBase::IMAGE_FILENAME_BASE_MAPS);
+//do image operation...
+save_image.Save();
+```
+In this example, once Save() is executed on save_image, it will create a png file at 
 
-<br>
-<br>
+``King Arthur's Gold/Base/Maps/myMod/myImage.png``
+</details>
+
 
 ## void Save()
-
-<br>
-<small>Returns: $void </small>
-
-<br>
-<br>
+Save the current CFileObject image to ``King Arthur's Gold/Base/Maps/yourimage.png`` by default or if setFilename has been set, it save it to that location.
 
 ## void setPixel(uint8 a, uint8 r, uint8 g, uint8 b)
-
-<br>
-<small>Returns: $void </small>
-
-<br>
-<br>
-
 ## void setPixelAndAdvance(uint8 a, uint8 r, uint8 g, uint8 b)
-
-<br>
-<small>Returns: $void </small>
-
-<br>
-<br>
-
 ## void setPixel(SColor col)
-
-<br>
-<small>Returns: $void </small>
-
-<br>
-<br>
-
 ## void setPixelAndAdvance(SColor col)
 
-<br>
-<small>Returns: $void </small>
-
-<br>
-<br>
-
 ## void setPixelAtPosition(uint x, uint y, SColor col, bool blend_alpha)
+Set pixel at a specific coordinate on the image with the value of the SColor.
+blend_alpha serve to activate or deactivate blending between pixels.
 
-<br>
-<small>Returns: $void </small>
+## enums
+* IMAGE_FILENAME_BASE_MAPS it serve to specify _________
+* IMAGE_FILENAME_BASE_CACHE it serve to specify _________
 
-<br>
-<br>
+## Variable 
+CFileImage::bool silent_errors
 
+This variable purpose is to _________
+
+## Examples
+<details>
+<summary>Usage example to load a png file into an array</summary>
+
+```as
+uint8[][] currentBlueprintData;
+int16 currentBlueprintWidth = 0;
+int16 currentBlueprintHeight = 0;
+void LoadBlueprintFromPng(CRules@ this, string imagePath)
+{
+	@save_image = CFileImage(imagePath);
+	bool done = false;
+
+	if (save_image.isLoaded())
+	{
+		currentBlueprintWidth = save_image.getWidth();
+		currentBlueprintHeight = save_image.getHeight();
+		save_image.setPixelOffset(-1);
+		uint8[][] _currentBlueprintData(currentBlueprintWidth, uint8[](currentBlueprintHeight, 0));
+		currentBlueprintData = _currentBlueprintData;
+		u8 a;
+		u8 r;
+		u8 g;
+		u8 b;
+		while(save_image.nextPixel() && !done)
+		{
+			if(save_image.readPixel(a, r, g, b)) ///the argument given are the output of the function
+			{
+				currentBlueprintData[save_image.getPixelPosition().x][save_image.getPixelPosition().y] = r;
+                //in this example, only the red part of the image is used to store something.
+                //Therefore only retrieve the red value is retrieved.
+			}
+			else
+			{
+				print("an error occured while reading a pixel from a blueprint png");
+			}
+		}
+	}
+	else
+	{
+		print("couldn't load blueprint");
+	}
+}
+```
+</details>
+
+<details>
+<summary>Usage example to find all of the images of your mod</summary>
+
+To be able to retrieve all image from your mod, you should prefix or suffix all your image with a identifiers. In this example, every image file wanted has a prefix with "blueprint_".
+```as
+//this is what is executed when saving a file in this example
+int currentTime = Time();
+save_image.setFilename("DynamicBlueprints/blueprint_" + currentTime + ".png", ImageFileBase::IMAGE_FILENAME_BASE_MAPS);
+save_image.setPixelOffset(0);
+	//do operations on the image
+save_image.Save()
+```
+The following is a concrete example on how retrieving and loading previously saved image may be implemented : 
+```as
+array<string> filenames;
+/* search for all png files path that start with "blueprint_" and
+put the path into a string array named filenames */
+void searchForBlueprints() 
+{
+	CFileMatcher@ files = CFileMatcher("blueprint_");
+	files.reset();
+	while (files.iterating())
+	{
+		filenames.push_back(files.getCurrent());
+		print(files.getCurrent() + " blueprint has been found");
+	}
+}
+```
+
+```as
+bool loadImage = false; 
+void onInit(CRules@ this)
+{
+	searchForBlueprints(); 
+    loadImage = true;
+}
+```
+```as
+void onTick(CRules@ this)
+{
+
+	if(isClient() && loadImage)
+	{		
+    		/* the following function has been defined in the previous example named
+            "Usage example to load a png file into an array:"*/
+			LoadBlueprintFromPng(this, filenames[0]); 
+            loadImage = false;
+	}
+}
+```
+
+</details>

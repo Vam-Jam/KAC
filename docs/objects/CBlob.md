@@ -13,8 +13,10 @@ Can be called manually after using ``server_CreateBlobNoInit(const string&in)``,
 <br>
 <small>Returns: void</small>
 
-#### Example: 
-```
+<details>
+<summary>Example</summary>
+
+```as
 CBlob@ new_blob = server_CreateBlobNoInit("new_blob"); // new blob
 if (new_blob !is null)
 {
@@ -22,6 +24,8 @@ if (new_blob !is null)
     new_blob.Init(); // tell the blob to Init all scripts
 }
 ```
+
+</details>
 <br>
 <br>
 
@@ -29,17 +33,17 @@ if (new_blob !is null)
 This returns an f32 in the amount of HP the blob currently has.
 <br>
 <br>
-<small>Returns: f32 - current health</small>
+<small>Returns: f32 - current health (amount of hearts / 2)</small>
 
-#### Note:
-Health returned is current hp / 2.
-<br>
-Example: If you have 3 hearts, the returned value is ``1.5f``
+<details>
+<summary>Example</summary>
 
-#### Example: 
+```as
+f32 currentHp = this.getHealth(); // lets say we have 2 hearts
+print(currentHp+''); // this would print '1.0'
 ```
-f32 currentHp = this.getHealth(); // store our current HP for later
-```
+
+</details>
 <br>
 <br>
 
@@ -47,16 +51,16 @@ f32 currentHp = this.getHealth(); // store our current HP for later
 This returns an f32 with the amount of HP stated in our blobs .cfg file.
 <br>
 <br>
-<small>Returns: f32 - with starting hp</small>
+<small>Returns: f32 - with starting hp (hearts / 2)</small>
 
-#### Note:
-Health returned is current hp / 2.
-<br>
-Example: If you have 3 hearts, the returned value is ``1.5f``
+<details>
+<summary>Example</summary>
 
-#### Example: 
+```as
+f32 hpOnStart = this.getInitialHealth(); // lets say we started off with 3 hearts
+print(hpOnStart+''); // this would print '1.5'
 ```
-f32 hpOnStart = this.getInitialHealth();
-```
+
+</details>
 <br>
 <br>
