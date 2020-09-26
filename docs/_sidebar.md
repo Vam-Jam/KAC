@@ -18,4 +18,4 @@
     - [ConfigFile](objects/ConfigFile.md)
     - [HitInfo](objects/HitInfo.md)
     - [ShapePlatformDirection](objects/ShapePlatformDirection.md)
-    - [onCommand Hooks](misc/using-commands.md)
+<!--    - [onCommand Hooks](misc/using-commands.md) -->
