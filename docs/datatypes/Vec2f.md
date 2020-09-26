@@ -1,78 +1,48 @@
-# Vec2f@ class
+# Vec2f class
+
+Vec2f (also known as Vector2d in other engines) is a class that simply holds an X value, and a Y value. It's used extremely often in KAG.
 
 ---
 
-## float x
+# Properties
+Gives you read and write access to any variable below.
 
-<br>
-<small>Returns: $float </small>
+### float x
 
-<br>
-<br>
+### float y
 
-## float y
 
-<br>
-<small>Returns: $float </small>
+---
 
-<br>
-<br>
+# Constructors
+Initiates the class 
 
-## <constructor>()
+### \<constructor>\()
+This will return a Vec2f with both x and y as 0
 
-<br>
-<small>Returns: $<constructor>() </small>
+### \<constructor>\( float x, float y )
+This will return a Vec2f with the values you pass inside the constructor
 
-<br>
-<br>
 
-## <constructor>(float, float)
+# Operators
 
-<br>
-<small>Returns: $<constructor>(float, </small>
+### Vec2f& opAssign( const Vec2f&in )
+This will allow you to assign a new value to the current Vec2f using the = operator
 
-<br>
-<br>
+### Vec2f opMul( float value ) 
+This will multiply the current Vec2f x and y with the given float and return a new Vec2f as shown:
+- return Vec2f( this.x * float, this.y * float );
 
-## Vec2f& opAssign(const Vec2f&in)
+### float opMul( const Vec2f&in )
+This will multiply the current Vec2f x and y with the given Vec2f as and return a new float as shown:
+- return float( this.x * other.x + this.y * other.y )
 
-<br>
-<small>Returns: $Vec2f& </small>
+### Vec2f& opMulAssign( const Vec2f&in )
+This will do opMul and opAssign
 
-<br>
-<br>
+### Vec2f& opMulAssign( const float )
+This will do opMul and opAssign
 
-## Vec2f opMul(float)
-
-<br>
-<small>Returns: $Vec2f </small>
-
-<br>
-<br>
-
-## float opMul(const Vec2f&in)
-
-<br>
-<small>Returns: $float </small>
-
-<br>
-<br>
-
-## Vec2f& opMulAssign(const Vec2f&in)
-
-<br>
-<small>Returns: $Vec2f& </small>
-
-<br>
-<br>
-
-## Vec2f& opMulAssign(const float)
-
-<br>
-<small>Returns: $Vec2f& </small>
-
-<br>
-<br>
 
 ## Vec2f opAdd(const Vec2f&in)
 
