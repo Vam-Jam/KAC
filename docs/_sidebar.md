@@ -5,10 +5,10 @@
     - [Modding](modding.md)
 
 - Documentation
-    - Data Types
+    - [Data Types](DataTypes.md)
         - [Vec2f](objects/Vec2f.md)
         - [SColor](objects/SColor.md)
-    - Objects
+    - [Objects and Classes](Objects.md)
         - [CBlob](objects/CBlob.md)
         - [CSprite](objects/CSprite.md)
         - [CPlayer](objects/CPlayer.md)
@@ -21,4 +21,7 @@
         - [ConfigFile](objects/ConfigFile.md)
         - [HitInfo](objects/HitInfo.md)
         - [ShapePlatformDirection](objects/ShapePlatformDirection.md)
+
+
+
 <!--    - [onCommand Hooks](misc/using-commands.md) -->

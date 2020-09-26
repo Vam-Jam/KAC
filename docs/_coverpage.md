@@ -2,7 +2,7 @@
 
 ![logo](https://camo.githubusercontent.com/2aa7d6940b246e2327b90810ee4c4ec4e2cb7b52/687474703a2f2f692e696d6775722e636f6d2f37393472597a672e706e67)
 
-# King Arthur's Code <small>0.1</small>
+# King Arthur's Code <small>0.2</small>
 
 > KAG's unofficial code documentation site.
 
