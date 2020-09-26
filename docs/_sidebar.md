@@ -6,8 +6,8 @@
 
 - Documentation
     - [Data Types](DataTypes.md)
-        - [Vec2f](objects/Vec2f.md)
-        - [SColor](objects/SColor.md)
+        - [Vec2f](datatypes/Vec2f.md)
+        - [SColor](datatypes/SColor.md)
     - [Objects and Classes](Objects.md)
         - [CBlob](objects/CBlob.md)
         - [CSprite](objects/CSprite.md)
