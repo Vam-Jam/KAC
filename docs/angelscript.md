@@ -1,18 +1,20 @@
 # AngelScript
 
+KAG uses AngelScript as its scripting langauge, and it's what you'll be using to mod the game.
+
 ---
 
-## What is AngelScript
-AngelScript, or its other name, AngelCode Scripting Library, is a library aimed to allow programmers to use external scripts with ease. 
+## What is AngelScript?
+AngelScript is a scripting langauge. There are many reasons why we may want to use a scripting langauge, the main ones being;
+- Let's us update game code without needing to recompile the whole game
+- Generally much easier to learn
 
-Scripting is important for games, and for many other applications, where you may want to edit/rebuild scripts in real time, without having to close the game, recompile it and so on. 
+A lot of games use a scripting langauge for this reason. There a lot of different types, one popular one being Lua, which was in consideration early development, however [we now know](https://cdn.discordapp.com/attachments/601801785623052301/716758460662022164/unknown.png) AS (AngelScript) was chosen because it was far easier to bind functions and objects then Lua.
 
-You can find the main site [here](https://www.angelcode.com/angelscript/)
 
-## Why does KAG use this over lua?
-KAG uses this instead of alternative such as lua because binding functions, scripts and what not was a lot easier to do in angelscript compared to lua for example.
+You can read more about AngelScript [here](https://www.angelcode.com/angelscript/), where it will have a lot of documentation and examples on how to use it.
 
-![Geti saying why KAG uses angelscript](https://cdn.discordapp.com/attachments/601801785623052301/716758460662022164/unknown.png)
+I plan to expand this area in the future with a guide on the basics of AngelScript at some point.
 
 
 ## Documentation
@@ -21,4 +23,4 @@ You can find it here:
 
 
 ## KeyWords/Formatting
-(void, classes, enums, new functions etc)
+TODO -> (void, classes, enums, new functions etc) 
